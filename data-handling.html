@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Handling | ApplyFlow Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2F5496;
+      --primary-light: #4472C4;
+      --primary-dark: #1F3864;
+      --secondary: #f8f9fa;
+      --text: #252525;
+      --text-secondary: #5E5E5E;
+      --light-bg: #F7F9FC;
+      --border: #E1E5EA;
+      --code-bg: #f5f5f5;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    body {
+      color: var(--text);
+      background-color: var(--light-bg);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo {
+      height: 40px;
+      margin-right: 15px;
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 30px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      background-color: white;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 40px;
+      margin-bottom: 40px;
+    }
+    
+    header {
+      margin-bottom: 40px;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 20px;
+    }
+    
+    .logo {
+      max-width: 60px;
+      float: left;
+      margin-right: 20px;
+    }
+    
+    h1 {
+      color: var(--primary);
+      margin-bottom: 10px;
+    }
+    
+    h2 {
+      color: var(--primary-dark);
+      margin: 30px 0 15px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    h3 {
+      color: var(--primary-dark);
+      margin: 20px 0 10px;
+    }
+    
+    p, ul, ol {
+      margin-bottom: 15px;
+    }
+    
+    ul, ol {
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 5px;
+    }
+    
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+    
+    a:hover {
+      text-decoration: underline;
+    }
+    
+    .footer {
+      text-align: center;
+      margin-top: 40px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+    
+    .highlight {
+      background-color: #EFF6FF;
+      padding: 15px;
+      border-radius: 5px;
+      border-left: 4px solid var(--primary);
+      margin: 20px 0;
+    }
+    
+    .code {
+      background-color: var(--code-bg);
+      padding: 15px;
+      border-radius: 5px;
+      font-family: 'Courier New', Courier, monospace;
+      overflow-x: auto;
+      margin: 15px 0;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+    
+    th, td {
+      padding: 10px;
+      border: 1px solid var(--border);
+      text-align: left;
+    }
+    
+    th {
+      background-color: var(--secondary);
+    }
+    
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+    
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      
+      .logo {
+        float: none;
+        display: block;
+        margin: 0 auto 20px;
+      }
+      
+      header {
+        text-align: center;
+      }
+      
+      table {
+        display: block;
+        overflow-x: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="logo-container">
+        <img src="./AFM_LOGO.png" alt="ApplyFlow Manager Logo" class="logo">
+        <div class="logo-text">ApplyFlow Manager</div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="data-handling.html">Data Handling</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="sitemap.html">Document Index</a>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <header>
+      <img src="./AFM_LOGO.png" alt="ApplyFlow Manager Logo" class="logo">
+      <h1>ApplyFlow Manager</h1>
+      <p>Detailed Data Handling Documentation</p>
+    </header>
+    
+    <main>
+      <div class="nav">
+        <a href="index.html">&larr; Back to Privacy Policy</a>
+      </div>
+      
+      <h2>Data Storage Implementation</h2>
+      <p>
+        ApplyFlow Manager uses Chrome's Storage API to store user data locally. Specifically, we use:
+      </p>
+      <ul>
+        <li><strong>chrome.storage.sync</strong>: For storing user profiles and settings that can sync across browsers signed in with the same account</li>
+      </ul>
+      
+      <p>The following storage keys are used:</p>
+      
+      <div class="code">
+        const STORAGE_KEY_PROFILES = 'smart_job_autofill_profiles';<br>
+        const STORAGE_KEY_SELECTED_PROFILE_ID = 'selectedProfileId';<br>
+        const STORAGE_KEY_JOB_SEARCH_HISTORY = 'jobSearchHistory';<br>
+        const STORAGE_KEY_LAST_JOB_SEARCH = 'lastJobSearch';
+      </div>
+      
+      <h2>Data Collection Details</h2>
+      <p>Below is a comprehensive list of the data fields that may be stored based on user input:</p>
+      
+      <h3>Personal Information</h3>
+      <table>
+        <tr>
+          <th>Data Field</th>
+          <th>Purpose</th>
+          <th>Storage Location</th>
+        </tr>
+        <tr>
+          <td>First Name</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Middle Name</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Preferred Name</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Phone Number</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+      </table>
+      
+      <h3>Address Information</h3>
+      <table>
+        <tr>
+          <th>Data Field</th>
+          <th>Purpose</th>
+          <th>Storage Location</th>
+        </tr>
+        <tr>
+          <td>Street Address</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>City</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>State/Province</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Postal/ZIP Code</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+      </table>
+      
+      <h3>Professional Information</h3>
+      <table>
+        <tr>
+          <th>Data Field</th>
+          <th>Purpose</th>
+          <th>Storage Location</th>
+        </tr>
+        <tr>
+          <td>Work Experience (company names, job titles, dates)</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Education History (schools, degrees, dates)</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Skills</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Soft Skills</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Portfolio URL</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>LinkedIn URL</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>GitHub URL</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Cover Letter</td>
+          <td>Form auto-filling</td>
+          <td>Local browser storage</td>
+        </tr>
+      </table>
+      
+      <h3>Job Search Information</h3>
+      <table>
+        <tr>
+          <th>Data Field</th>
+          <th>Purpose</th>
+          <th>Storage Location</th>
+        </tr>
+        <tr>
+          <td>Search Keywords</td>
+          <td>Job search history</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Search Locations</td>
+          <td>Job search history</td>
+          <td>Local browser storage</td>
+        </tr>
+        <tr>
+          <td>Selected Job Sites</td>
+          <td>Job search preferences</td>
+          <td>Local browser storage</td>
+        </tr>
+      </table>
+      
+      <h2>Data Transfer & Permissions Explanation</h2>
+      
+      <div class="highlight">
+        <p><strong>No Data Transfer:</strong> ApplyFlow Manager does NOT transmit any collected data outside your browser. All data operations occur locally on your device.</p>
+      </div>
+      
+      <p>Here is an explanation of each permission requested and why it's needed:</p>
+      
+      <h3>Permissions</h3>
+      <table>
+        <tr>
+          <th>Permission</th>
+          <th>Purpose</th>
+          <th>Data Access</th>
+        </tr>
+        <tr>
+          <td>storage</td>
+          <td>Store profile data and settings</td>
+          <td>Only accesses its own storage area</td>
+        </tr>
+        <tr>
+          <td>activeTab</td>
+          <td>Access form content on pages you're visiting</td>
+          <td>Only when you activate the extension</td>
+        </tr>
+        <tr>
+          <td>scripting</td>
+          <td>Inject form-filling scripts</td>
+          <td>Only when auto-filling is activated</td>
+        </tr>
+        <tr>
+          <td>tabs</td>
+          <td>Open job search results, detect forms</td>
+          <td>Basic tab information only</td>
+        </tr>
+        <tr>
+          <td>contextMenus</td>
+          <td>Add right-click menu options</td>
+          <td>No data access, creates UI elements</td>
+        </tr>
+        <tr>
+          <td>notifications</td>
+          <td>Display status notifications</td>
+          <td>No data access, only creates notifications</td>
+        </tr>
+        <tr>
+          <td>host_permissions</td>
+          <td>Access job site content</td>
+          <td>Only while actively browsing job sites</td>
+        </tr>
+      </table>
+      
+      <h2>Code Examples: How Data Stays Local</h2>
+      <p>Our extension is designed to keep all data local. Here are some code examples that demonstrate this approach:</p>
+      
+      <h3>Saving Profiles Locally</h3>
+      <div class="code">
+      async function saveProfiles(profiles) {<br>
+        &nbsp;&nbsp;try {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;await chrome.storage.sync.set({ [STORAGE_KEY_PROFILES]: profiles });<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return true;<br>
+        &nbsp;&nbsp;} catch (error) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.error('Error saving profiles:', error);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return false;<br>
+        &nbsp;&nbsp;}<br>
+      }
+      </div>
+      
+      <h3>Getting Profiles Locally</h3>
+      <div class="code">
+      async function getProfiles() {<br>
+        &nbsp;&nbsp;try {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;const result = await chrome.storage.sync.get(STORAGE_KEY_PROFILES);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return result[STORAGE_KEY_PROFILES] || [];<br>
+        &nbsp;&nbsp;} catch (error) {<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;console.error('Error getting profiles:', error);<br>
+        &nbsp;&nbsp;&nbsp;&nbsp;return [];<br>
+        &nbsp;&nbsp;}<br>
+      }
+      </div>
+      
+      <p>As you can see from these examples, all data operations use <code>chrome.storage.sync</code>, which stores data locally in the browser and optionally syncs across the user's devices (when signed into Chrome/Edge). There are no API calls to external services.</p>
+      
+      <h2>Data Deletion</h2>
+      <p>Users can delete their data in the following ways:</p>
+      <ul>
+        <li>Using the profile management interface in the extension to delete individual profiles</li>
+        <li>Clearing browser extension data through browser settings</li>
+        <li>Uninstalling the extension (which removes all associated storage)</li>
+      </ul>
+      
+      <div class="nav">
+        <a href="index.html">&larr; Back to Privacy Policy</a>
+      </div>
+    </main>
+    
+    <div class="footer">
+      <p>Last updated: June 1, 2023</p>
+      <p>ApplyFlow Manager © 2023. All rights reserved.</p>
+      <p>Contact: <a href="mailto:07ankur007@gmail.com">07ankur007@gmail.com</a></p>
+    </div>
+  </div>
+</body>
+</html> 

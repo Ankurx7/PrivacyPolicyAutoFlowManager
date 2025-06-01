@@ -1,0 +1,13 @@
+PRIVACY STATEMENT FOR MICROSOFT EDGE ADD-ONS STORE SUBMISSION
+
+ApplyFlow Manager Privacy Statement
+
+ApplyFlow Manager is a privacy-focused browser extension that helps automate job application forms. While the extension does access personal information, it is designed with privacy as a core principle:
+
+1. All personal data (including profiles, contact information, work history, and education details) is stored LOCALLY on your device using the browser's Storage API.
+
+2. NO data is transmitted to external servers, third parties, or even to the extension developers.
+
+3. Users have complete control over their data and can edit or delete it at any time through the extension's interface.
+
+4. The extension requires specific permissions (storage, activeTab, scripting, tabs, contextMenus, notifications) solely to provide form auto-filling functionality.

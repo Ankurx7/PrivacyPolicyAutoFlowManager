@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Privacy Policy | ApplyFlow Manager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2F5496;
+      --primary-light: #4472C4;
+      --primary-dark: #1F3864;
+      --secondary: #f8f9fa;
+      --text: #252525;
+      --text-secondary: #5E5E5E;
+      --light-bg: #F7F9FC;
+      --border: #E1E5EA;
+      --accent: #ED7D31;
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    }
+    
+    body {
+      color: var(--text);
+      background-color: var(--light-bg);
+      line-height: 1.7;
+      font-size: 16px;
+      font-weight: 400;
+    }
+    
+    .navbar {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    
+    .navbar-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 20px;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo {
+      height: 40px;
+      margin-right: 15px;
+    }
+    
+    .logo-text {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    
+    .nav-links {
+      display: flex;
+    }
+    
+    .nav-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 500;
+      margin-left: 30px;
+      transition: color 0.3s;
+    }
+    
+    .nav-links a:hover {
+      color: var(--primary);
+    }
+    
+    .hero {
+      background-color: var(--primary);
+      color: white;
+      padding: 60px 20px;
+    }
+    
+    .hero-content {
+      max-width: 1000px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .hero p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+    
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+    
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      padding: 40px;
+      margin-bottom: 40px;
+    }
+    
+    .card-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 30px;
+    }
+    
+    .card-icon {
+      background-color: var(--primary-light);
+      color: white;
+      width: 50px;
+      height: 50px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-right: 20px;
+    }
+    
+    h2 {
+      color: var(--primary);
+      font-size: 1.8rem;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+    
+    h3 {
+      color: var(--primary-dark);
+      font-size: 1.4rem;
+      font-weight: 600;
+      margin: 30px 0 15px;
+    }
+    
+    p, ul, ol {
+      margin-bottom: 20px;
+      color: var(--text-secondary);
+    }
+    
+    ul, ol {
+      padding-left: 20px;
+    }
+    
+    li {
+      margin-bottom: 10px;
+    }
+    
+    .highlight {
+      background-color: #EFF6FF;
+      padding: 20px;
+      border-radius: 8px;
+      border-left: 4px solid var(--primary);
+      margin: 30px 0;
+    }
+    
+    .highlight p {
+      margin-bottom: 0;
+    }
+    
+    .effective-date {
+      display: inline-block;
+      background-color: var(--light-bg);
+      padding: 10px 15px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      margin-bottom: 30px;
+    }
+    
+    .table-container {
+      overflow-x: auto;
+      margin: 30px 0;
+    }
+    
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+    
+    th, td {
+      text-align: left;
+      padding: 15px;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    th {
+      background-color: var(--light-bg);
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+    
+    tr:hover {
+      background-color: #f8f9fa;
+    }
+    
+    .btn {
+      display: inline-block;
+      background-color: var(--primary);
+      color: white;
+      font-weight: 500;
+      padding: 12px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s;
+    }
+    
+    .btn:hover {
+      background-color: var(--primary-dark);
+    }
+    
+    .btn-secondary {
+      background-color: white;
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+    
+    .btn-secondary:hover {
+      background-color: var(--light-bg);
+    }
+    
+    .section-links {
+      background-color: var(--light-bg);
+      padding: 15px 20px;
+      border-radius: 8px;
+      margin-bottom: 40px;
+    }
+    
+    .section-links h3 {
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+    
+    .section-links ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .section-links li {
+      margin-bottom: 5px;
+    }
+    
+    .section-links a {
+      display: block;
+      padding: 8px 0;
+      color: var(--primary);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border);
+    }
+    
+    .section-links a:hover {
+      color: var(--primary-dark);
+    }
+    
+    footer {
+      background-color: var(--primary-dark);
+      color: white;
+      padding: 60px 20px 30px;
+    }
+    
+    .footer-content {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+    }
+    
+    .footer-column h3 {
+      color: white;
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    
+    .footer-column ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    
+    .footer-column li {
+      margin-bottom: 10px;
+    }
+    
+    .footer-column a {
+      color: rgba(255, 255, 255, 0.8);
+      text-decoration: none;
+    }
+    
+    .footer-column a:hover {
+      color: white;
+      text-decoration: underline;
+    }
+    
+    .copyright {
+      max-width: 1200px;
+      margin: 30px auto 0;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      text-align: center;
+      font-size: 0.9rem;
+      color: rgba(255, 255, 255, 0.6);
+    }
+    
+    @media (max-width: 768px) {
+      .navbar-content {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      
+      .nav-links {
+        margin-top: 15px;
+        flex-direction: column;
+      }
+      
+      .nav-links a {
+        margin: 5px 0;
+        margin-left: 0;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .hero p {
+        font-size: 1rem;
+      }
+      
+      .card {
+        padding: 25px;
+      }
+      
+      .footer-content {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-content">
+      <div class="logo-container">
+        <img src="./AFM_LOGO.png" alt="ApplyFlow Manager Logo" class="logo">
+        <div class="logo-text">ApplyFlow Manager</div>
+      </div>
+      <div class="nav-links">
+        <a href="index.html">Privacy Policy</a>
+        <a href="data-handling.html">Data Handling</a>
+        <a href="terms-of-service.html">Terms of Service</a>
+        <a href="sitemap.html">Document Index</a>
+      </div>
+    </div>
+  </nav>
+  
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Privacy Policy</h1>
+      <p>Our commitment to safeguarding your data while streamlining your job application process</p>
+    </div>
+  </section>
+  
+  <div class="container">
+    <div class="section-links">
+      <h3>Table of Contents</h3>
+      <ul>
+        <li><a href="#introduction">Introduction</a></li>
+        <li><a href="#data-collection">Data Collection and Processing</a></li>
+        <li><a href="#data-storage">Data Storage and Security</a></li>
+        <li><a href="#permissions">Browser Permissions</a></li>
+        <li><a href="#data-control">User Data Control Rights</a></li>
+        <li><a href="#changes">Changes to this Policy</a></li>
+        <li><a href="#contact">Contact Information</a></li>
+      </ul>
+    </div>
+    
+    <div class="card">
+      <span class="effective-date">Effective Date: June 1, 2023</span>
+      
+      <div class="highlight">
+        <p><strong>Privacy-First Approach:</strong> ApplyFlow Manager is designed with your privacy as our highest priority. All your personal information stays on your device and is never transmitted to external servers or third parties.</p>
+      </div>
+      
+      <section id="introduction">
+        <h2>1. Introduction</h2>
+        <p>ApplyFlow Solutions, Inc. ("ApplyFlow," "we," "our," or "us") is committed to protecting your privacy and ensuring you have control over your personal data. This Privacy Policy explains how ApplyFlow Manager (the "Extension") handles your personal information when you use our browser extension.</p>
+        
+        <p>By installing and using the ApplyFlow Manager Extension, you acknowledge that you have read and understand the terms and practices described in this Privacy Policy.</p>
+      </section>
+      
+      <section id="data-collection">
+        <h2>2. Data Collection and Processing</h2>
+        
+        <h3>2.1 Information We May Collect</h3>
+        <p>ApplyFlow Manager is designed to facilitate job applications by automatically filling out forms with information you provide. The Extension may collect and store the following categories of information:</p>
+        
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Category</th>
+              <th>Examples of Data</th>
+              <th>Purpose</th>
+            </tr>
+            <tr>
+              <td>Personal Identifiers</td>
+              <td>Name, email address, phone number, date of birth</td>
+              <td>To auto-fill personal information sections of job applications</td>
+            </tr>
+            <tr>
+              <td>Address Information</td>
+              <td>Street address, city, state/province, postal code, country</td>
+              <td>To auto-fill address fields in job applications</td>
+            </tr>
+            <tr>
+              <td>Professional Information</td>
+              <td>Work history, job titles, employer names, responsibilities, achievements</td>
+              <td>To auto-fill employment history sections</td>
+            </tr>
+            <tr>
+              <td>Educational Information</td>
+              <td>Schools attended, degrees earned, graduation dates, GPA</td>
+              <td>To auto-fill education sections</td>
+            </tr>
+            <tr>
+              <td>Skills & Qualifications</td>
+              <td>Technical skills, soft skills, certifications, languages</td>
+              <td>To auto-fill skills and qualifications sections</td>
+            </tr>
+            <tr>
+              <td>Job Search Preferences</td>
+              <td>Search terms, locations, preferred job sites</td>
+              <td>To facilitate job searching across multiple platforms</td>
+            </tr>
+          </table>
+        </div>
+        
+        <h3>2.2 How We Process Your Data</h3>
+        <p>ApplyFlow Manager processes your information solely for the purpose of providing the auto-filling functionality. All processing occurs locally on your device. Specifically:</p>
+        
+        <ul>
+          <li>When you input your profile information, it is stored locally in your browser's storage.</li>
+          <li>When you visit a job application page, the Extension analyzes the form fields and matches them with your stored profile data.</li>
+          <li>When you activate the auto-fill feature, the Extension populates the form fields with your information.</li>
+          <li>When you use the job search feature, your search terms are used to generate search URLs for various job sites.</li>
+        </ul>
+        
+        <div class="highlight">
+          <p><strong>Important:</strong> All data processing occurs exclusively on your device. Your personal information is never sent to our servers, third-party services, or any other external systems.</p>
+        </div>
+      </section>
+      
+      <section id="data-storage">
+        <h2>3. Data Storage and Security</h2>
+        
+        <h3>3.1 Local Storage</h3>
+        <p>ApplyFlow Manager uses your browser's built-in storage mechanisms (specifically Chrome/Edge Storage API) to store your information. This data is:</p>
+        
+        <ul>
+          <li>Stored exclusively on your device</li>
+          <li>Associated only with your browser profile</li>
+          <li>Protected by your browser's security mechanisms</li>
+          <li>Optionally synchronized across your devices if you are signed into your browser account</li>
+        </ul>
+        
+        <h3>3.2 Data Security</h3>
+        <p>While we have implemented reasonable technical measures to protect your information, please be aware that no method of electronic storage is 100% secure. The security of your data also depends on your browser's security features and your device's overall security.</p>
+        
+        <p>Since your data never leaves your device through our Extension, the risk of unauthorized access via data transmission is eliminated. However, we recommend taking standard precautions to protect your device and browser, such as:</p>
+        
+        <ul>
+          <li>Using a secure, up-to-date browser</li>
+          <li>Setting strong passwords for your device and browser profile</li>
+          <li>Being cautious about who has physical access to your device</li>
+          <li>Keeping your operating system and security software updated</li>
+        </ul>
+      </section>
+      
+      <section id="permissions">
+        <h2>4. Browser Permissions</h2>
+        <p>To provide its functionality, ApplyFlow Manager requires certain browser permissions. Below is a detailed explanation of each permission and how it is used:</p>
+        
+        <div class="table-container">
+          <table>
+            <tr>
+              <th>Permission</th>
+              <th>Purpose</th>
+              <th>Data Access</th>
+            </tr>
+            <tr>
+              <td>storage</td>
+              <td>To store your profile information and settings</td>
+              <td>Accesses only the Extension's dedicated storage area</td>
+            </tr>
+            <tr>
+              <td>activeTab</td>
+              <td>To interact with job application forms on the current webpage</td>
+              <td>Only activated when you explicitly use the Extension features</td>
+            </tr>
+            <tr>
+              <td>scripting</td>
+              <td>To inject the form-filling scripts that populate application fields</td>
+              <td>Only runs when auto-filling is activated</td>
+            </tr>
+            <tr>
+              <td>tabs</td>
+              <td>To open job search results in new tabs and detect application forms</td>
+              <td>Limited to basic tab information and operations</td>
+            </tr>
+            <tr>
+              <td>contextMenus</td>
+              <td>To add Extension options to the browser's right-click menu</td>
+              <td>Creates UI elements only, no data access</td>
+            </tr>
+            <tr>
+              <td>notifications</td>
+              <td>To display alerts about form detection and other Extension activities</td>
+              <td>Creates notification UI elements only</td>
+            </tr>
+            <tr>
+              <td>host_permissions</td>
+              <td>To operate on job application websites</td>
+              <td>Activates only when browsing job sites</td>
+            </tr>
+          </table>
+        </div>
+        
+        <p>These permissions are used strictly for providing the core functionality of the Extension and not for any data collection or tracking purposes.</p>
+      </section>
+      
+      <section id="data-control">
+        <h2>5. User Data Control Rights</h2>
+        <p>ApplyFlow Solutions is committed to ensuring you have complete control over your personal information. You have the following rights regarding your data:</p>
+        
+        <h3>5.1 Right to Access</h3>
+        <p>You can access all your stored data at any time through the Extension's interface. Since all data is stored locally, it is immediately available to you.</p>
+        
+        <h3>5.2 Right to Rectification</h3>
+        <p>You can edit your profile information at any time through the Extension's profile management interface.</p>
+        
+        <h3>5.3 Right to Erasure</h3>
+        <p>You can delete individual profiles or all your data using the Extension's interface. Additionally, you can completely remove all data by:</p>
+        <ul>
+          <li>Uninstalling the Extension</li>
+          <li>Clearing browser extension data through your browser's settings</li>
+        </ul>
+        
+        <h3>5.4 Data Portability</h3>
+        <p>While the Extension does not currently offer a direct export feature, since your data is stored in your browser, you maintain complete ownership and control over it.</p>
+      </section>
+      
+      <section id="changes">
+        <h2>6. Changes to this Privacy Policy</h2>
+        <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other operational, legal, or regulatory reasons. When we make material changes to this Privacy Policy, we will provide notice through the Extension or by other means as appropriate.</p>
+        
+        <p>We encourage you to periodically review this Privacy Policy to stay informed about our data practices. Continued use of the Extension after any changes to the Privacy Policy constitutes your acceptance of such changes.</p>
+      </section>
+      
+      <section id="contact">
+        <h2>7. Contact Information</h2>
+        <p>If you have any questions, concerns, or requests regarding this Privacy Policy or our privacy practices, please contact us at:</p>
+        
+        <p>
+          Email: <a href="mailto:07ankur007@gmail.com">07ankur007@gmail.com</a>
+        </p>
+        
+        <p>We will respond to your inquiry as soon as possible and within the timeframe required by applicable law.</p>
+      </section>
+    </div>
+    
+    <div style="text-align: center; margin: 40px 0;">
+      <a href="data-handling.html" class="btn">View Detailed Data Handling Documentation</a>
+      <a href="terms-of-service.html" class="btn btn-secondary" style="margin-left: 15px;">Terms of Service</a>
+    </div>
+  </div>
+  
+  <footer>
+    <div class="footer-content">
+      <div class="footer-column">
+        <h3>ApplyFlow Manager</h3>
+        <ul>
+          <li><a href="data-handling.html">Data Handling</a></li>
+          <li><a href="terms-of-service.html">Terms of Service</a></li>
+          <li><a href="sitemap.html">Privacy Documents</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    <div class="copyright">
+      <p>&copy; 2025 ApplyFlow Manager. All rights reserved.</p>
+      <p>Contact: <a href="mailto:07ankur007@gmail.com">07ankur007@gmail.com</a></p>
+    </div>
+  </footer>
+</body>
+</html> 
